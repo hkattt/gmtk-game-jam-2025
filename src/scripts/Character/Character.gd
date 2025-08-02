@@ -9,9 +9,9 @@ const MAX_SPEED_BURST: float = 300.0
 const MAX_SPEED_LERP: float  = 0.5
 
 const FRICTION: float          = 1000.0
-const ACCELERAION: float       = 300.0
+const ACCELERAION: float       = 200.0
 const JUMP_ACCELERATION: float = 150.0
-const DASH_ACCELERATION: float = 300.0
+const DASH_ACCELERATION: float = 150.0
  
 const MAXIMUM_NUMBER_OF_JUMPS: int = 2
 const MAXIMUM_NUMBER_OF_DASHES: int = 1
@@ -41,6 +41,9 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("loop"):
+		if not looping:
+			var character_body: CharacterBody = CharacterBody.create(position)
+			get_tree().current_scene.add_child(character_body)
 		looping = true
 	else:
 		looping = false
@@ -74,7 +77,10 @@ func _physics_process(delta: float) -> void:
 		dash_timer.start(0.25)
 #
 	current_max_speed = lerp(current_max_speed, target_max_speed, delta * MAX_SPEED_LERP)
-				#
+	
+	if direction != 0 and sign(direction) != sign(target_velocity.x):
+		target_velocity.x = 0.0
+		
 	target_velocity.x += direction * ACCELERAION * delta
 	if dashing:
 		target_velocity.x += (DASH_ACCELERATION if target_velocity.x > 0  else -DASH_ACCELERATION) * delta
