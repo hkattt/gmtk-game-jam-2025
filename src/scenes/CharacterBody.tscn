@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcingdqfsw0l1"]
+
+[ext_resource type="Script" uid="uid://b6fhxb3s6gnfc" path="res://scripts/CharacterBody.gd" id="1_k1frc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0kroj"]
+size = Vector2(8, 8)
+
+[node name="CharacterBody" type="StaticBody2D"]
+script = ExtResource("1_k1frc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_0kroj")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 8, 0, 8, 8, 0, 8)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
