@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=4 uid="uid://hi6cy7qe5td0"]
+
+[ext_resource type="Texture2D" uid="uid://bvfaoi1hjbi1a" path="res://assets/images/atlas.png" id="1_6vs76"]
+[ext_resource type="PackedScene" uid="uid://b81citgwgu0bn" path="res://scenes/Character.tscn" id="1_uhqny"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kl8ac"]
+texture = ExtResource("1_6vs76")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_qifjx"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_kl8ac")
+
+[node name="Level" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(12, 0)
+tile_map_data = PackedByteArray("AAATAAAAAAAAAAAAAAATAAEAAAAAAAAAAAATAAIAAAAAAAAAAAATAAMAAAAAAAAAAAATAAQAAAAAAAAAAAATAAUAAAAAAAAAAAATAAYAAAAAAAAAAAATAAcAAAAAAAAAAAATAAgAAAAAAAAAAAATAAkAAAAAAAAAAAATAAoAAAAAAAAAAAATAAsAAAAAAAAAAAASAAsAAAAAAAAAAAARAAsAAAAAAAAAAAAQAAsAAAAAAAAAAAAPAAsAAAAAAAAAAAAOAAsAAAAAAAAAAAANAAsAAAAAAAAAAAAMAAsAAAAAAAAAAAALAAsAAAAAAAAAAAAKAAsAAAAAAAAAAAAJAAsAAAAAAAAAAAAIAAsAAAAAAAAAAAAHAAsAAAAAAAAAAAAGAAsAAAAAAAAAAAAFAAsAAAAAAAAAAAAEAAsAAAAAAAAAAAADAAsAAAAAAAAAAAACAAsAAAAAAAAAAAABAAsAAAAAAAAAAAAAAAsAAAAAAAAAAAD//wsAAAAAAAAAAAD+/wsAAAAAAAAAAAD+/woAAAAAAAAAAAD+/wkAAAAAAAAAAAD+/wgAAAAAAAAAAAD+/wcAAAAAAAAAAAD+/wYAAAAAAAAAAAD+/wUAAAAAAAAAAAD+/wQAAAAAAAAAAAD+/wMAAAAAAAAAAAD+/wIAAAAAAAAAAAD+/wEAAAAAAAAAAAD+/wAAAAAAAAAAAAAJAAoAAAAAAAAAAAAKAAoAAAAAAAAAAAAMAAgAAAAAAAAAAAANAAgAAAAAAAAAAAAKAAUAAAAAAAAAAAAJAAUAAAAAAAAAAAAIAAUAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_qifjx")
+
+[node name="Character" parent="." instance=ExtResource("1_uhqny")]
+position = Vector2(68, 106)
