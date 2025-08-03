@@ -11,15 +11,17 @@ config_version=5
 [application]
 
 config/name="gmtk-game-jame-2025"
-run/main_scene="uid://bjugcuetu5k4v"
+config/version="1.0.0"
+run/main_scene="uid://dywynfc7el6te"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/image="uid://duf0kluk7nv83"
 config/icon="res://icon.svg"
 
 [autoload]
 
 MusicManager="*res://scenes/managers/MusicManager.tscn"
-LevelManager="*res://scenes/managers/LevelManager.tscn"
 SoundManager="*res://scenes/managers/SoundManager.tscn"
+SceneManager="*res://scenes/managers/SceneManager.tscn"
 
 [display]
 

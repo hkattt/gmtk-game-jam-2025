@@ -1,6 +1,18 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dc1m23qegbufr"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dc1m23qegbufr"]
 
 [ext_resource type="FontFile" uid="uid://18c88ie2kl7j" path="res://assets/font/TinyUnicode.ttf" id="2_6h4n8"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6h4n8"]
+bg_color = Color(0.000693897, 0.000693898, 0.000693897, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l3arp"]
+bg_color = Color(0.227451, 0.227451, 0.227451, 0.964706)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
 [resource]
 default_font = ExtResource("2_6h4n8")
+Panel/styles/panel = SubResource("StyleBoxFlat_6h4n8")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_l3arp")

@@ -3,6 +3,7 @@ class_name Character extends CharacterBody2D
 signal died
 
 @export var can_loop: bool = false
+@export var can_dash: bool = false
 
 @onready var dash_timer: Timer = $DashTimer
 @onready var timestamp_timer: Timer = $TimestampTimer
@@ -80,7 +81,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("jump") and jump_timer < 0.25 and not dashing:
 		target_velocity.y = -JUMP_ACCELERATION
 		jump_timer += delta	
-	if Input.is_action_just_pressed("dash") and ndashes > 0:
+	if can_dash and Input.is_action_just_pressed("dash") and ndashes > 0:
 		current_max_speed = MAX_SPEED_BURST
 		dashing = true
 		ndashes -= 1
