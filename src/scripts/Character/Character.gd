@@ -1,5 +1,7 @@
 class_name Character extends CharacterBody2D
 
+signal died
+
 @onready var dash_timer: Timer = $DashTimer
 @onready var timestamp_timer: Timer = $TimestampTimer
 

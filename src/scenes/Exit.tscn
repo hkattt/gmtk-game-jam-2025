@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce42d2mu3lm8k"]
+
+[ext_resource type="Script" uid="uid://dfj0felylogoq" path="res://scripts/Exit.gd" id="1_c4vl1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yhnsb"]
+size = Vector2(8, 8)
+
+[node name="Exit" type="Area2D"]
+script = ExtResource("1_c4vl1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_yhnsb")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 8, 0, 8, 8, 0, 8)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

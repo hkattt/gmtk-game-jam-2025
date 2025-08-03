@@ -29,6 +29,6 @@ alpha_curve = ExtResource("1_qm0ue")
 
 [node name="BackgroundParticles" type="GPUParticles2D"]
 amount = 200
-lifetime = 10.0
+lifetime = 20.0
 preprocess = 10.0
 process_material = SubResource("ParticleProcessMaterial_ygs6h")
