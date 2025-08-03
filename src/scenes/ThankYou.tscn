@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://nf32n6arp4as"]
+
+[ext_resource type="Script" uid="uid://r8qaruo17kis" path="res://scripts/ThankYou.gd" id="1_lcp6m"]
+[ext_resource type="PackedScene" uid="uid://mq8yocpk7xke" path="res://scenes/background-particles/BackgroundParticles.tscn" id="2_nwdjb"]
+
+[node name="ThankYou" type="Node2D"]
+script = ExtResource("1_lcp6m")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 320.0
+offset_bottom = 180.0
+color = Color(0.159283, 0.0082987, 0.128263, 1)
+
+[node name="BackgroundParticles" parent="." instance=ExtResource("2_nwdjb")]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 180.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control/CenterContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 32
+text = "Thanks for playing :)"
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

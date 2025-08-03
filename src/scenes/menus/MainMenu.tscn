@@ -51,7 +51,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 32
-text = "Live Square Repeat"
+text = "Live. Square. Repeat."
 
 [node name="Button" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 texture_filter = 1
