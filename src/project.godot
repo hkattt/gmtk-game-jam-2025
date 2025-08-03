@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="gmtk-game-jame-2025"
-run/main_scene="uid://hi6cy7qe5td0"
+run/main_scene="uid://bjugcuetu5k4v"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+LevelManager="*res://scripts/managers/LevelManager.gd"
 
 [display]
 
