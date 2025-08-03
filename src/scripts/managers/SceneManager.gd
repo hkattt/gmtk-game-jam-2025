@@ -11,14 +11,14 @@ const THANK_YOU_SCENE = preload("res://scenes/ThankYou.tscn")
 
 const LEVEL_SCENES: Array[PackedScene] = [
 	preload("res://scenes/levels/stage1/Level1.tscn"),
-	#preload("res://scenes/levels/stage1/Level2.tscn"),
-	#preload("res://scenes/levels/stage1/Level3.tscn"),
-	#preload("res://scenes/levels/stage2/Level1.tscn"),
-	#preload("res://scenes/levels/stage2/Level2.tscn"),
-	#preload("res://scenes/levels/stage2/Level3.tscn"),
-	#preload("res://scenes/levels/stage3/Level1.tscn"),
-	#preload("res://scenes/levels/stage3/Level2.tscn"),
-	#preload("res://scenes/levels/stage3/Level3.tscn")
+	preload("res://scenes/levels/stage1/Level2.tscn"),
+	preload("res://scenes/levels/stage1/Level3.tscn"),
+	preload("res://scenes/levels/stage2/Level1.tscn"),
+	preload("res://scenes/levels/stage2/Level2.tscn"),
+	preload("res://scenes/levels/stage2/Level3.tscn"),
+	preload("res://scenes/levels/stage3/Level1.tscn"),
+	preload("res://scenes/levels/stage3/Level2.tscn"),
+	preload("res://scenes/levels/stage3/Level3.tscn")
 ]
 
 var game_screen: GameScreen = GameScreen.MAIN_MENU

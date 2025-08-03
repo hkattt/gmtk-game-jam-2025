@@ -1,5 +1,37 @@
-# gmtk-game-jam-2025
-Game created for GMTK Game Jam 2025.
+# GMTK Game Jam 2025
+
+## Overview
+Live. Square. Repeat was made using Godot 4.4.1 and GDScript for the [GMTK Game Jam 2025](https://itch.io/jam/gmtk-2025). The theme of the game jam was was `LOOP`.  
+
+Live. Square. Repeat eat is a puzzle platformer game. You play as a unassuming square, but there is a catch: you can travel backwards in time, making seemingly impossible situations solvable. 
+
+## Controls
+
+The game is fully controlled using the mouse. 
+
+
+| Action | Keyboard Input       | Controller Input             |
+|--------|----------------------|------------------------------|
+| Move   | A and D              | Left analog stick            |
+| Jump   | Space                | A (Xbox) or Cross (PS)       |
+| Loop   | E                    | X (Xbox) or Square (PS)      |
+
+## Images
+<img src="assets/live-square-repeat-cover-image.png" alt="Cover image" width="320" height="240"/>  
+<img src="assets/level-2.png" alt="Level 2" width="320" height="240"/>  
+<img src="assets/level-5.png" alt="Level 5" width="320" height="240"/>  
+<img src="assets/level-7.png" alt="Level 7" width="320" height="240"/>  
+
+## Dependencies
+
+The only dependency is the [Godot 4 game engine](https://godotengine.org/). 
+
+## Setup the Project Locally
+
+To setup the project locally, simply clone the repository and open the project in Godot. 
+
+## Inspiration
+- [Mt. Major](https://kristoff-red.itch.io/mt-major)
 
 ## Asset References
 - **DuffsDevice**. Game font. Retrieved from: https://www.pentacom.jp/pentacom/bitfontmaker2/gallery/?id=468
