@@ -39,6 +39,7 @@ grow_vertical = 2
 theme_override_constants/margin_left = 6
 theme_override_constants/margin_top = 140
 theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
 
 [node name="VBoxContainer" type="HBoxContainer" parent="Control/MarginContainer"]
 layout_mode = 2
@@ -50,13 +51,13 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 32
-text = "GAME TITLE HERE"
+text = "Live Square Repeat"
 
 [node name="Button" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 0
-size_flags_vertical = 4
+size_flags_vertical = 8
 text = "Start game"
 
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
