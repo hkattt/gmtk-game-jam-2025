@@ -18,9 +18,9 @@ The game is fully controlled using the mouse.
 
 ## Images
 <img src="assets/live-square-repeat-cover-image.png" alt="Cover image" width="320" height="240"/>  
-<img src="assets/level-2.png" alt="Level 2" width="320" height="240"/>  
-<img src="assets/level-5.png" alt="Level 5" width="320" height="240"/>  
-<img src="assets/level-7.png" alt="Level 7" width="320" height="240"/>  
+<img src="assets/second-level.png" alt="Level 2" width="320" height="240"/>  
+<img src="assets/fifth-level.png" alt="Level 5" width="320" height="240"/>  
+<img src="assets/seventh-level.png" alt="Level 7" width="320" height="240"/>  
 
 ## Dependencies
 
