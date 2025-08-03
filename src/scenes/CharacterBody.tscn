@@ -1,9 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcingdqfsw0l1"]
+[gd_scene load_steps=5 format=3 uid="uid://dcingdqfsw0l1"]
 
 [ext_resource type="Script" uid="uid://b6fhxb3s6gnfc" path="res://scripts/CharacterBody.gd" id="1_k1frc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0kroj"]
 size = Vector2(8, 8)
+
+[sub_resource type="Gradient" id="Gradient_53v7d"]
+offsets = PackedFloat32Array(0.136531, 0.263838, 0.472325, 0.638376)
+colors = PackedColorArray(0.302121, 0.302121, 0.302121, 1, 0.107654, 0.107654, 0.107654, 1, 0.0149088, 0.0149088, 0.0149088, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_k1frc"]
+gradient = SubResource("Gradient_53v7d")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [node name="CharacterBody" type="StaticBody2D"]
 script = ExtResource("1_k1frc")
@@ -16,5 +27,9 @@ shape = SubResource("RectangleShape2D_0kroj")
 polygon = PackedVector2Array(0, 0, 8, 0, 8, 8, 0, 8)
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(4, 4)
+texture = SubResource("GradientTexture2D_k1frc")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

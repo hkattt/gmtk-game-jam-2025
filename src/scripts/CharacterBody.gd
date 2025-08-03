@@ -14,4 +14,9 @@ func _ready() -> void:
 	timer.start(DURATION)
 
 func _on_timer_timeout() -> void:
+	var tween: Tween = create_tween()
+	tween.tween_property(self, "scale", Vector2.ZERO, 0.5)
+	tween.finished.connect(_on_body_hidden, CONNECT_ONE_SHOT)
+	
+func _on_body_hidden() -> void:	
 	queue_free()

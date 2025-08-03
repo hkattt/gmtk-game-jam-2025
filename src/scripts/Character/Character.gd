@@ -2,6 +2,8 @@ class_name Character extends CharacterBody2D
 
 signal died
 
+@export var can_loop: bool = false
+
 @onready var dash_timer: Timer = $DashTimer
 @onready var timestamp_timer: Timer = $TimestampTimer
 
@@ -42,7 +44,7 @@ func _ready() -> void:
 	timestamp_timer.start(LOOP_GRANULARITY)
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("loop"):
+	if can_loop and Input.is_action_just_pressed("loop"):
 		if not looping:
 			SoundManager.play_sound(SoundManager.Sound.LOOP)
 			var character_body: CharacterBody = CharacterBody.create(position)
@@ -50,7 +52,7 @@ func _process(delta: float) -> void:
 			
 		looping = true
 		
-	if not Input.is_action_pressed("loop"):
+	if can_loop and not Input.is_action_pressed("loop"):
 		if looping:
 			SoundManager.stop_sound()
 			looping = false
