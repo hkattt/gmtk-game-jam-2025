@@ -42,13 +42,18 @@ func _ready() -> void:
 	timestamp_timer.start(LOOP_GRANULARITY)
 
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("loop"):
+	if Input.is_action_just_pressed("loop"):
 		if not looping:
+			SoundManager.play_sound(SoundManager.Sound.LOOP)
 			var character_body: CharacterBody = CharacterBody.create(position)
 			get_tree().current_scene.add_child(character_body)
+			
 		looping = true
-	else:
-		looping = false
+		
+	if not Input.is_action_pressed("loop"):
+		if looping:
+			SoundManager.stop_sound()
+			looping = false
 		
 func _physics_process(delta: float) -> void:
 	if looping:
@@ -67,6 +72,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("move_right"):
 		direction = 1
 	if Input.is_action_just_pressed("jump") and njumps > 0:
+		SoundManager.play_sound(SoundManager.Sound.JUMP, -10.0)
 		njumps -= 1
 		jump_timer = 0.0
 	if Input.is_action_pressed("jump") and jump_timer < 0.25 and not dashing:
