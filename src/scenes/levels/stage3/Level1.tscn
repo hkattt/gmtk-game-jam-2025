@@ -32,6 +32,7 @@ tile_set = SubResource("TileSet_6vs76")
 
 [node name="Character" parent="." instance=ExtResource("3_3kwsc")]
 position = Vector2(25, 168)
+can_loop = true
 
 [node name="Exit" parent="." instance=ExtResource("4_6j4u2")]
 position = Vector2(277, 64)
