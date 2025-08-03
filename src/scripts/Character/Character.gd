@@ -4,6 +4,7 @@ signal died
 
 @export var can_loop: bool = false
 @export var can_dash: bool = false
+@export var loop_time_limit: float = 5.0
 
 @onready var dash_timer: Timer = $DashTimer
 @onready var timestamp_timer: Timer = $TimestampTimer
@@ -40,6 +41,7 @@ var dashing: bool = false
 var positions: Array[Vector2] = []
 var current_timestamp: int = 0
 var looping: bool = false
+var remaining_loop_time: float = loop_time_limit
 
 func _ready() -> void:
 	timestamp_timer.start(LOOP_GRANULARITY)
@@ -57,10 +59,16 @@ func _process(delta: float) -> void:
 		if looping:
 			SoundManager.stop_sound()
 			looping = false
+			
+	if remaining_loop_time <= 0.0:
+		_handle_death()
 		
 func _physics_process(delta: float) -> void:
 	if looping:
 		return
+		
+	if position.y > 200:
+		_handle_death()
 		
 	if is_on_floor():
 		njumps = MAXIMUM_NUMBER_OF_JUMPS
@@ -78,6 +86,8 @@ func _physics_process(delta: float) -> void:
 		SoundManager.play_sound(SoundManager.Sound.JUMP)
 		njumps -= 1
 		jump_timer = 0.0
+	if Input.is_action_just_released("jump"):
+		jump_timer = 0.25
 	if Input.is_action_pressed("jump") and jump_timer < 0.25 and not dashing:
 		target_velocity.y = -JUMP_ACCELERATION
 		jump_timer += delta	
@@ -106,6 +116,15 @@ func _physics_process(delta: float) -> void:
 	velocity = target_velocity
 	move_and_slide()
 
+func _handle_death() -> void:
+	remaining_loop_time = loop_time_limit
+	positions = []
+	looping = false
+	SoundManager.play_sound(SoundManager.Sound.POOF)
+	var tween: Tween = create_tween()
+	tween.tween_property(self, "scale", Vector2.ZERO, 0.5)
+	tween.finished.connect(_on_body_hidden, CONNECT_ONE_SHOT)
+		
 func _on_dash_timer_timeout() -> void:
 	dashing = false
 	target_velocity.x = move_toward(target_velocity.x, 0.0, 0.9)
@@ -116,8 +135,13 @@ func _on_timestamp_timer_timeout() -> void:
 		if next_position == null:
 			looping = false
 		else:
-			position = next_position
+			remaining_loop_time -= LOOP_GRANULARITY
+			if remaining_loop_time >= 0.0:
+				position = next_position
 	else:
 		if (positions.size() >= MAXIMUM_NUMBER_OF_TIMESTAMPS):
 			positions.pop_front()
 		positions.push_back(position)
+		
+func _on_body_hidden() -> void:
+	died.emit() 

@@ -33,9 +33,16 @@ tile_set = SubResource("TileSet_6vs76")
 [node name="Character" parent="." instance=ExtResource("4_feiha")]
 position = Vector2(28, 88)
 can_loop = true
+loop_time_limit = 7.5
 
 [node name="Exit" parent="." instance=ExtResource("5_l8dx5")]
 position = Vector2(290, 59)
 
 [node name="RespawnPoint" parent="." instance=ExtResource("6_44lmc")]
 position = Vector2(25, 170)
+
+[node name="LoopTime" type="Label" parent="."]
+offset_left = 12.0
+offset_right = 52.0
+offset_bottom = 13.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)

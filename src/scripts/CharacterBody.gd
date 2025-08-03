@@ -2,7 +2,7 @@ class_name CharacterBody extends StaticBody2D
 
 @onready var timer = $Timer
 
-const DURATION: float = 5.0
+const DURATION: float = 6.0
 const character_body_scene: PackedScene = preload("res://scenes/CharacterBody.tscn")
 
 static func create(p_position: Vector2) -> CharacterBody:

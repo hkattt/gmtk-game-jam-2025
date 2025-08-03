@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=4 uid="uid://cuc7p74xgndn3"]
+
+[ext_resource type="Script" uid="uid://cga842jrq7yu1" path="res://scripts/Level.gd" id="1_mwof1"]
+[ext_resource type="PackedScene" uid="uid://dvbogp6pwllvw" path="res://scenes/levels/stage3/Background.tscn" id="2_aovfu"]
+[ext_resource type="Texture2D" uid="uid://bvfaoi1hjbi1a" path="res://assets/images/atlas.png" id="3_0pxep"]
+[ext_resource type="PackedScene" uid="uid://b81citgwgu0bn" path="res://scenes/Character.tscn" id="4_3xuay"]
+[ext_resource type="PackedScene" uid="uid://ce42d2mu3lm8k" path="res://scenes/Exit.tscn" id="5_gy2xw"]
+[ext_resource type="PackedScene" uid="uid://3rplxteegx11" path="res://scenes/RespawnPoint.tscn" id="6_w1y5r"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k5jlv"]
+texture = ExtResource("3_0pxep")
+texture_region_size = Vector2i(8, 8)
+0:0/next_alternative_id = 2
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+0:0/1 = 1
+0:0/1/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+
+[sub_resource type="TileSet" id="TileSet_6vs76"]
+tile_size = Vector2i(8, 8)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_k5jlv")
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_mwof1")
+
+[node name="Background" parent="." instance=ExtResource("2_aovfu")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAABYAAAAAAAAAAAAAABUAAAAAAAAAAAAAABQAAAAAAAAAAAAAABMAAAAAAAAAAAAAABIAAAAAAAAAAAAAABEAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA0AAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAD//xcAAAAAAAAAAQAAABcAAAAAAAAAAQAoABcAAAAAAAAAAQAoABYAAAAAAAAAAQAoABUAAAAAAAAAAQAoABQAAAAAAAAAAQAoABMAAAAAAAAAAQAoABIAAAAAAAAAAQAoABEAAAAAAAAAAQAoABAAAAAAAAAAAQAoAA8AAAAAAAAAAQAoAA4AAAAAAAAAAQAoAA0AAAAAAAAAAQAoAAwAAAAAAAAAAQAoAAsAAAAAAAAAAQAoAAoAAAAAAAAAAQAoAAkAAAAAAAAAAQAoAAgAAAAAAAAAAQAoAAcAAAAAAAAAAQAoAAYAAAAAAAAAAQAoAAUAAAAAAAAAAQAoAAQAAAAAAAAAAQAoAAMAAAAAAAAAAQAoAAIAAAAAAAAAAQAoAAEAAAAAAAAAAQAoAAAAAAAAAAAAAQAoAP//AAAAAAAAAQAVAP//AAAAAAAAAQAWAP//AAAAAAAAAQAXAP//AAAAAAAAAQAYAP//AAAAAAAAAQAZAP//AAAAAAAAAQAaAP//AAAAAAAAAQAbAP//AAAAAAAAAQAcAP//AAAAAAAAAQAdAP//AAAAAAAAAQAeAP//AAAAAAAAAQAfAP//AAAAAAAAAQAgAP//AAAAAAAAAQAhAP//AAAAAAAAAQAiAP//AAAAAAAAAQAjAP//AAAAAAAAAQAkAP//AAAAAAAAAQAlAP//AAAAAAAAAQAmAP//AAAAAAAAAQAnAP//AAAAAAAAAQD/////AAAAAAAAAQAAAP//AAAAAAAAAQABAP//AAAAAAAAAQACAP//AAAAAAAAAQADAP//AAAAAAAAAQAEAP//AAAAAAAAAQAFAP//AAAAAAAAAQAGAP//AAAAAAAAAQAHAP//AAAAAAAAAQAIAP//AAAAAAAAAQAJAP//AAAAAAAAAQAKAP//AAAAAAAAAQALAP//AAAAAAAAAQAMAP//AAAAAAAAAQANAP//AAAAAAAAAQAOAP//AAAAAAAAAQAPAP//AAAAAAAAAQAQAP//AAAAAAAAAQARAP//AAAAAAAAAQASAP//AAAAAAAAAQATAP//AAAAAAAAAQAUAP//AAAAAAAAAQD//wAAAAAAAAAAAQD//wEAAAAAAAAAAQD//wIAAAAAAAAAAQD//wMAAAAAAAAAAQD//wQAAAAAAAAAAQD//wUAAAAAAAAAAQD//wYAAAAAAAAAAQD//wcAAAAAAAAAAQD//wgAAAAAAAAAAQD//wkAAAAAAAAAAQD//woAAAAAAAAAAQD//wsAAAAAAAAAAQD//wwAAAAAAAAAAQD//w0AAAAAAAAAAQD//w4AAAAAAAAAAQD//w8AAAAAAAAAAQD//xAAAAAAAAAAAQD//xEAAAAAAAAAAQD//xIAAAAAAAAAAQD//xMAAAAAAAAAAQD//xQAAAAAAAAAAQD//xUAAAAAAAAAAQD//xYAAAAAAAAAAQABAAsAAAAAAAAAAAACAAsAAAAAAAAAAAADAAsAAAAAAAAAAAAEAAsAAAAAAAAAAAAFAAsAAAAAAAAAAAAiAAsAAAAAAAAAAAAjAAsAAAAAAAAAAAAkAAsAAAAAAAAAAAAlAAsAAAAAAAAAAAAmAAsAAAAAAAAAAAAnAAsAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_6vs76")
+
+[node name="Character" parent="." instance=ExtResource("4_3xuay")]
+position = Vector2(23, 80)
+can_loop = true
+
+[node name="Exit" parent="." instance=ExtResource("5_gy2xw")]
+position = Vector2(291, 59)
+
+[node name="RespawnPoint" parent="." instance=ExtResource("6_w1y5r")]
+position = Vector2(25, 170)
+
+[node name="LoopTime" type="Label" parent="."]
+offset_left = 13.0
+offset_right = 53.0
+offset_bottom = 13.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)

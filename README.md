@@ -8,6 +8,7 @@ Game created for GMTK Game Jam 2025.
 - **mehraniiii**. Exit SFX. Licence: Creative Commons 0. Retrieved from: https://freesound.org/people/mehraniiii/sounds/588221/
 - **pytho0n11**. Loop SFX. Licence: Creative Commons 0. Retrieved from: https://freesound.org/people/pyth0n11/sounds/706447/
 - **wobesound**. Click SFX. Licence: Creative Commons 0. Retrieved from: https://freesound.org/people/wobesound/sounds/488381/
+- **Timbre**. Poof SFX. Licence: Attribution NonCommerical 4.0. Retrieved from: https://freesound.org/people/Timbre/sounds/73595/
 
 ## Code References
 - State Machine: https://youtu.be/ow_Lum-Agbs?si=eszvXZjshpV-3jkt
