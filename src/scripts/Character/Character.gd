@@ -75,7 +75,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("move_right"):
 		direction = 1
 	if Input.is_action_just_pressed("jump") and njumps > 0:
-		SoundManager.play_sound(SoundManager.Sound.JUMP, -10.0)
+		SoundManager.play_sound(SoundManager.Sound.JUMP)
 		njumps -= 1
 		jump_timer = 0.0
 	if Input.is_action_pressed("jump") and jump_timer < 0.25 and not dashing:

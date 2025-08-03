@@ -34,7 +34,7 @@ tile_set = SubResource("TileSet_6vs76")
 position = Vector2(25, 168)
 
 [node name="Exit" parent="." instance=ExtResource("5_tm28d")]
-position = Vector2(288, 136)
+position = Vector2(288, 118)
 
 [node name="RespawnPoint" parent="." instance=ExtResource("6_65wli")]
 position = Vector2(25, 170)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dvbogp6pwllvw"]
 
-[ext_resource type="PackedScene" uid="uid://mq8yocpk7xke" path="res://scenes/background-particles/BackgroundParticles.tscn" id="1_trw2t"]
+[ext_resource type="PackedScene" uid="uid://dvqahjqs4bggo" path="res://scenes/background-particles/TriangleBackgroundParticles.tscn" id="1_trw2t"]
 
 [node name="Background" type="Node2D"]
 
@@ -10,7 +10,6 @@ offset_bottom = 183.0
 color = Color(0.465796, 0.402224, 0.360217, 1)
 
 [node name="BackgroundParticles" parent="." instance=ExtResource("1_trw2t")]
-position = Vector2(161, 90)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 rotation = 0.755728

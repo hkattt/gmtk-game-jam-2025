@@ -9,4 +9,5 @@ func _ready() -> void:
 	version_label.text = "v{version}".format({"version": version})
 
 func _on_button_pressed() -> void:
+	SoundManager.play_sound(SoundManager.Sound.CLICK)
 	started.emit()
