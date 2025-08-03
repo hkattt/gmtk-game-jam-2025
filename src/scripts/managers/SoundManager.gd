@@ -22,7 +22,7 @@ func play_sound(sound: Sound, volume_db: float = 0.0) -> void:
 	if sound in sounds:
 		var audio_stream: AudioStream = sounds[sound]
 		
-		if sound_player.stream == audio_stream:
+		if sound_player.stream == audio_stream and sound_player.playing:
 			return
 		
 		sound_player.stop()

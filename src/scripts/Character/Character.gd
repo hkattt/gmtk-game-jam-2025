@@ -15,7 +15,7 @@ const ACCELERAION: float       = 200.0
 const JUMP_ACCELERATION: float = 150.0
 const DASH_ACCELERATION: float = 150.0
  
-const MAXIMUM_NUMBER_OF_JUMPS: int = 2
+const MAXIMUM_NUMBER_OF_JUMPS: int = 1
 const MAXIMUM_NUMBER_OF_DASHES: int = 1
 
 const MAXIMUM_LOOP_TIME: int = 5

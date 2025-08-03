@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://5h7ag5mxaqoe"]
+
+[ext_resource type="Texture2D" uid="uid://hq71ufdn0p72" path="res://assets/images/circle.png" id="1_28sin"]
+[ext_resource type="Texture2D" uid="uid://2d4np2mmru6p" path="res://resources/curves/alpha.tres" id="1_urno0"]
+[ext_resource type="Texture2D" uid="uid://buixs5dkfv1fi" path="res://resources/gradients/pink.tres" id="2_28sin"]
+
+[sub_resource type="Curve" id="Curve_gyaek"]
+_data = [Vector2(0, 0.156981), 0.0, 0.0, 0, 0, Vector2(0.290076, 0.728207), 0.0, 0.0, 0, 0, Vector2(0.5, 0.362129), 0.0, 0.0, 0, 0, Vector2(0.791985, 0.857193), 0.0, 0.0, 0, 0, Vector2(0.994275, 0.0694543), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_facta"]
+curve = SubResource("Curve_gyaek")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ygs6h"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(320, 180, 1)
+angle_min = 1.07288e-05
+angle_max = 360.0
+spread = 180.0
+flatness = 1.0
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -10.0
+radial_accel_max = 10.0
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_facta")
+color_ramp = ExtResource("2_28sin")
+alpha_curve = ExtResource("1_urno0")
+
+[node name="BackgroundParticles" type="GPUParticles2D"]
+amount = 200
+texture = ExtResource("1_28sin")
+lifetime = 10.0
+preprocess = 10.0
+process_material = SubResource("ParticleProcessMaterial_ygs6h")
