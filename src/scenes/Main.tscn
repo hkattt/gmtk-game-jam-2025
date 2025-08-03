@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bjugcuetu5k4v"]
+[gd_scene load_steps=3 format=3 uid="uid://dywynfc7el6te"]
 
-[ext_resource type="Script" uid="uid://fwosinmw50k5" path="res://scripts/Main.gd" id="1_elqb8"]
+[ext_resource type="Script" uid="uid://dn6u6ljq22qjs" path="res://scripts/Main.gd" id="1_elqb8"]
+[ext_resource type="PackedScene" uid="uid://bkh5q2i5two2r" path="res://scenes/components/ScreenTransition.tscn" id="2_rvslj"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_elqb8")
+
+[node name="ScreenTransition" parent="." instance=ExtResource("2_rvslj")]

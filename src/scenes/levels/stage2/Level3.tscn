@@ -39,7 +39,7 @@ position = Vector2(38, 168)
 can_loop = true
 
 [node name="Exit" parent="." instance=ExtResource("5_tja8j")]
-position = Vector2(272, 168)
+position = Vector2(272, 151)
 
 [node name="RespawnPoint" parent="." instance=ExtResource("6_j008g")]
 position = Vector2(25, 170)

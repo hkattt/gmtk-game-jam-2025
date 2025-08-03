@@ -3,7 +3,8 @@ extends Node2D
 enum Sound {
 	JUMP,
 	EXIT,
-	LOOP
+	LOOP,
+	CLICK
 }
 
 @onready var sound_player: AudioStreamPlayer2D = $SoundPlayer
@@ -11,11 +12,13 @@ enum Sound {
 @onready var jump_sound: AudioStream = preload("res://assets/sfx/jump.mp3")
 @onready var exit_sound: AudioStream = preload("res://assets/sfx/exit.mp3")
 @onready var loop_sound: AudioStream = preload("res://assets/sfx/loop.mp3")
+@onready var click_sound: AudioStream = preload("res://assets/sfx/click.mp3")
 
 @onready var sounds: Dictionary = {
 	Sound.JUMP: jump_sound,
 	Sound.EXIT: exit_sound,
-	Sound.LOOP: loop_sound
+	Sound.LOOP: loop_sound,
+	Sound.CLICK: click_sound
 }
 
 func play_sound(sound: Sound, volume_db: float = 0.0) -> void:
