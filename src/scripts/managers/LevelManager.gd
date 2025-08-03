@@ -7,7 +7,11 @@ const LEVELS: Array[PackedScene] = [
 	preload("res://scenes/levels/stage1/Level2.tscn"),
 	preload("res://scenes/levels/stage1/Level3.tscn"),
 	preload("res://scenes/levels/stage2/Level1.tscn"),
-	preload("res://scenes/levels/stage2/Level2.tscn")
+	preload("res://scenes/levels/stage2/Level2.tscn"),
+	preload("res://scenes/levels/stage2/Level3.tscn"),
+	preload("res://scenes/levels/stage3/Level1.tscn"),
+	#preload("res://scenes/levels/stage3/Level2.tscn"),
+	#preload("res://scenes/levels/stage3/Level3.tscn")
 ]
 
 var level_index: int = 0

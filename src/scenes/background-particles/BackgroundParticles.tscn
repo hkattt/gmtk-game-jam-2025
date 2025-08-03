@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://mq8yocpk7xke"]
 
-[ext_resource type="Texture2D" uid="uid://2d4np2mmru6p" path="res://resources/curves/alpha.tres" id="1_qm0ue"]
-[ext_resource type="Texture2D" uid="uid://bjfsiksx5gxp6" path="res://resources/gradients/gray.tres" id="2_qm0ue"]
+[ext_resource type="Texture2D" uid="uid://2d4np2mmru6p" path="res://resources/curves/alpha.tres" id="1_wcywi"]
+[ext_resource type="Texture2D" uid="uid://buixs5dkfv1fi" path="res://resources/gradients/pink.tres" id="2_mpu4o"]
 
 [sub_resource type="Curve" id="Curve_gyaek"]
 _data = [Vector2(0, 0.497874), 0.0, 0.0, 0, 0, Vector2(0.303435, 0.973048), 0.0, 0.0, 0, 0, Vector2(0.5, 0.362129), 0.0, 0.0, 0, 0, Vector2(0.791985, 0.857193), 0.0, 0.0, 0, 0, Vector2(0.994275, 0.0694543), 0.0, 0.0, 0, 0]
@@ -24,8 +24,8 @@ radial_accel_max = 10.0
 scale_min = 20.0
 scale_max = 60.0
 scale_curve = SubResource("CurveTexture_facta")
-color_ramp = ExtResource("2_qm0ue")
-alpha_curve = ExtResource("1_qm0ue")
+color_ramp = ExtResource("2_mpu4o")
+alpha_curve = ExtResource("1_wcywi")
 
 [node name="BackgroundParticles" type="GPUParticles2D"]
 amount = 200
